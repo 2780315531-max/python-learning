@@ -7,8 +7,8 @@ print(s[0])
 print(s[len(s) - 1])
 
 #布尔类型
-b1 = True
-b2 = False
+b1 = True  #True-1
+b2 = False #False-0
 
 #空值
 n = None
@@ -19,4 +19,3 @@ print(type(b1))
 print(type(n))
 print(type(1.5))
 
-len (b1)
