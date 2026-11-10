@@ -1,3 +1,4 @@
+"""
 #if基础语法
 #if条件判断：如果分数超过680，上清华
 score = int(input("请输入你的分数："))
@@ -67,3 +68,83 @@ if num2 >= 60:
 else:
     print("不及格")
 
+#if...elif....eles...案例：根据用户输入的数字，判断数字是真数还是负数还是0
+num = int(input("请输入数字:"))
+if num > 0:
+    print(f"{num}是个正数")
+elif num < 0:
+    print(f"{num}是负数")
+else:
+    print(f"{num}是0")  
+"""
+
+"""
+#案例：根据输入的用户名和密码进行系统登入
+username = input("请输入用户名:")
+userpass = input("请输入密码:")
+
+if username == "admin" and userpass == "6666":
+    print("登入成功")
+elif username == "root" and userpass == "66667":
+    print("登入成功")
+elif username == "zyk" and userpass == "12345":
+    print("登入成功")
+else:
+    print("登入失败")
+"""
+"""
+案例：三角形类型判断
+1。构成三角形的条件:两边之和大于第三边
+2.三边相等：等边三角形
+两边相等：等腰三角形
+三边都不相等：普通三角形
+"""
+"""
+#第一种
+#1.接收输入的三角形三个边的边长
+a = int(input("请输入第一条边边长:"))
+b = int(input("请输入第二条边边长:"))
+c = int(input("请输入第三条边边长:"))
+#判断三角形类型
+if a == b == c:
+    print("等边三角形")
+elif a == b or b == c or a == c:
+    print("等腰三角形")
+else:
+    print("普通三角形")
+
+
+#第二种
+a = int(input("请输入第一条边边长:"))
+b = int(input("请输入第二条边边长:"))
+c = int(input("请输入第三条边边长:"))
+if a + b >c and a +c > b and b + c >a:
+    if a == b and b == c:
+        print(f"{a}{b}{c}这三个构成等边三角形~")
+    elif a == b or b ==c or a == c:
+        print(f"{a}{b}{c}这三个构成等腰三角形~")
+    else:
+        print(f"{a}{b}{c}这三个构成普通三角形~")
+else:
+    print(f"{a}{b}{c}这三个不能构成三角形！！")
+"""
+#练习：计算电费
+#第一档：2880度以下，电费单价0.4883元/度
+#第二档：2880-4800度，电费单价0.5383元/度
+#第三档：4800度以上，电费单价0.7883元/度
+# 获取输入用电度数
+num = float(input("请输入年度用电度数："))
+if num <= 2880:
+    fee = num * 0.4883
+elif num <= 4800:
+    # 2880度按一档，剩下的按二档
+    fee = 2880 * 0.4883 + (num - 2880) * 0.5383
+else:
+    # 一档全部 + 二档全部 + 超出4800部分三档
+    fee = 2880 * 0.4883 + (4800 - 2880) * 0.5383 + (num - 4800) * 0.7883
+
+print(f"总电费为：{fee:.2f} 元")
+
+
+
+    
